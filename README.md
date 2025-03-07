@@ -59,4 +59,4 @@ This project is a **PDF-based chatbot** that leverages **FAISS (Facebook AI Simi
 ---
 
 
-<img src="Images/InterfaceSS.png" alt="Chatbot UI" width="500"/>
+<img src="Images/InterfaceSS.png" alt="Chatbot UI" width="1024"/>
