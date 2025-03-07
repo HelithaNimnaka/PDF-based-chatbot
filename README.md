@@ -27,10 +27,12 @@ This project is a **PDF-based chatbot** that leverages **FAISS (Facebook AI Simi
 - This improves retrieval and **preserves context**.
 
 ### **Step 4: Convert Text Chunks into Embeddings**
-- Use **Sentence Transformers (`all-MiniLM-L6-v2`)** to create numerical **vector representations** of the text.
+- Use **Sentence Transformers (`all-MiniLM-L6-v2`)** to convert each text chunk into a **numerical embedding (vector)**.
+- These embeddings store meaning and allow efficient similarity search.
 
 ### **Step 5: Build and Save FAISS Index**
 - Store embeddings in a **FAISS index** for fast similarity searches.
+- Creates an L2 (Euclidean Distance) FAISS Index.
 - Save the index to disk for reuse.
 
 ### **Step 6: Load FAISS Index (If Exists)**
@@ -38,6 +40,9 @@ This project is a **PDF-based chatbot** that leverages **FAISS (Facebook AI Simi
 
 ### **Step 7: Search for Relevant Chunks in FAISS**
 - Perform **similarity search** using FAISS to find the **most relevant text chunks** for a given query.
+- Finds text chunks similar to the query using FAISS nearest neighbor search.
+- Uses cosine similarity (inverted Euclidean distance) for ranking.
+
 
 ### **Step 8: Generate Answer Using DeepSeek-LLM**
 - Use **retrieved context** from FAISS to **construct a prompt**.
